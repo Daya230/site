@@ -1,0 +1,751 @@
+
+
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--black);
+    color: var(--white);
+    overflow-x: hidden; /* Оставьте это, чтобы избежать боковой прокрутки */
+}
+
+.hero {
+    position: relative;
+    height: 100vh; /* Секция занимает всю высоту экрана */
+    width: 100%;
+    
+    /* Добавление изображения по ссылке */
+    background-image: url('https://i.ibb.co.com/Fk4r8SGm/Gemini-Generated-Image-6elbty6elbty6elb.png');
+    
+    /* Настройки отображения */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* Изображение масштабируется, заполняя блок */
+    
+    display: flex;
+    align-items: center;
+}
+/* Затемнение фона для читаемости текста */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, transparent 100%);
+}
+.container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем контент по вертикали */
+    height: 100vh;           /* Используем всю высоту для свободы маневра */
+    padding-bottom: 5vh;     /* Оставляем место внизу для карточки */
+}
+
+.hero-content {
+    margin-top: -50px;       /* Небольшое смещение заголовка вверх для баланса */
+    margin-bottom: 2.5rem;
+}
+/* Типографика */
+.subtitle {
+    font-size: 2rem;                   /* Увеличьте с 1.2 до 1.4 или 1.5 */
+    letter-spacing: 2px;                 /* Добавьте «воздуха» между буквами */
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.title {
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+/* Кнопки */
+.hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Расстояние между кнопками */
+    margin-top: 30px;
+}
+.cta-group {
+    display: flex;          /* Включает режим гибкого контейнера */
+    flex-direction: row;    /* Выстраивает элементы в ряд (по умолчанию) */
+    align-items: center;    /* Выравнивает кнопку и стрелку по вертикальному центру */
+    gap: 15px;              /* Создает аккуратный отступ между кнопкой и стрелкой */
+    margin-bottom: 3rem;
+    margin-top: 30px;
+}
+.btn-primary {
+    display: inline-block;
+    background: #ffffff; /* Полностью белый фон */
+    color: #000000; /* Черный текст */
+    padding: 18px 40px; /* Увеличенный паддинг для размера */
+    border-radius: 20px; /* Большой радиус закругления */
+    text-decoration: none;
+    font-weight: 700; /* Жирный шрифт */
+    font-size: 1.2rem;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    height: 65px; /* Квадратная форма */
+}
+.btn-primary:hover {
+    background: #f0f0f0; /* Легкое затемнение */
+}
+.btn-arrow {
+    display: flex;          /* Чтобы стрелка внутри была по центру */
+    background: #ffffff; /* Полностью белый фон */
+    color: #000000; /* Черная стрелка */
+    width: 65px; /* Квадратная форма */
+    height: 65px; /* Квадратная форма */
+    border-radius: 20px; /* Тот же радиус */
+    border: none;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-arrow:hover {
+    background: #f0f0f0;
+}
+/* social media*/
+.social-links {
+    display: flex;
+    gap: 15px;      
+    margin-top: 25px;   
+}
+
+.icon-link {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.icon-link:hover {
+    border-color: var(--white); 
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);   
+}
+
+
+/* Инфо-карточка в углу */
+.info-card {
+    position: absolute;      
+    bottom: 40px;       
+    right: 0;              
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;  
+    display: flex;
+    padding: 12px;         
+    max-width: 480px;     
+    align-items: center;
+}
+.card-image {
+    width: 180px;          
+    height: 110px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    background: url('https://i.ibb.co.com/cXT957qk/Gemini-Generated-Image-tizjpbtizjpbtizj.png') center/cover;
+}
+.card-text {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-text p {
+    font-size: 0.95rem;     
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+.info-card .card-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 0; 
+}
+/* "See more" */
+.btn-secondary {
+    background: #ffffff;
+    color: #000000;
+    height: 50px;      
+    padding: 0 25px;
+    border-radius: 15px; 
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.arrow-small-btn {
+    display: flex;
+    background: #ffffff;
+    color: #000000;
+    width: 50px;     
+    height: 50px;
+    border-radius: 15px; 
+    border: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.btn-secondary:hover, .arrow-small-btn:hover {
+    background: #f0f0f0;
+}
+
+
+.card-text {
+    padding-left: 15px;
+    font-size: 0.8rem;
+}
+
+/*-------------------------------------------------------------------------------*/
+
+.solutions {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 100px 0;
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+.container-solutions {
+    max-width: 1440px; 
+    margin: 0 auto;   
+    padding: 0 5%;   
+}
+
+.title-dark {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+.subtitle-dark{
+    font-size: 2.2rem;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;                           
+    text-align: left;
+}
+
+.grid-card {
+    background: #f4f4f4;
+    border-radius: 30px;
+    padding: 40px 30px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card-main {
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), 
+                url('https://i.ibb.co.com/DgLv4Z0C/Gemini-Generated-Image-p6s1zcp6s1zcp6s1.png') center/cover;
+    color: #ffffff;
+}
+
+.card-main h3 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.card-info h4 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    line-height: 1.3;
+}
+
+.card-info p {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.circle-icon {
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border-radius: 50%;
+    margin-bottom: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+
+/*___________________________________________________________________________*/
+.ocean-protection {
+    padding: 60px 0;
+    background-color: #ffffff; /* Белый фон страницы вокруг баннера */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+}
+
+/* Сам баннер с фиксированными размерами из Figma */
+.ocean-overlay {
+    width: 100%;           /* Если хотите строго впритык к краям браузера */
+    max-width: 1440px;     /* Ограничение из Figma */
+    height: 538px;
+    margin: 0;             /* Никаких отступов сверху или снизу */
+
+    border-radius: 50px; /* Сильное скругление углов */
+    position: relative;
+    overflow: hidden;
+    background: url('https://i.ibb.co.com/YFf3dR2n/Gemini-Generated-Image-dfgsjtdfgsjtdfgs.png') center/cover no-repeat;
+    
+    /* Центрируем содержимое внутри баннера */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 40px 40px;
+    
+}
+
+/* Затемнение фона для лучшей читаемости текста */
+.ocean-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Стили заголовка и кнопки */
+.ocean-title {
+    position: relative;
+    z-index: 2;
+    font-size: 4.5rem;
+    color: #ffffff;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-align: center; 
+    width: 100%;      
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary-large {
+    position: relative;
+    z-index: 2;
+    background: #ffffff;
+    color: #000000;
+    padding: 16px 40px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.btn-primary-large:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* Сетка карточек внизу баннера */
+.ocean-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+}
+
+/* Эффект Glassmorphism для карточек */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px); /* Размытие фона */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    height: 140px;
+}
+
+.glass-img {
+    width: 120px;
+    height: 100%;
+    border-radius: 18px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.glass-content {
+    padding-left: 15px;
+    color: #ffffff;
+}
+
+.glass-content h5 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+
+.glass-content p {
+    font-size: 0.75rem;
+    line-height: 1.3;
+    opacity: 0.9;
+}
+
+
+/*__________________________________________*/
+/*__________________________________________*/
+/* Единая секция: Объединенный стиль */
+
+.about-robotics {
+    padding: 100px 0;           /* Достаточный отступ сверху и снизу */
+    background-color: #ffffff;  /* Чистый белый фон */
+    color: #000000;             /* Черный текст для контраста */
+}
+
+/* Используем специфичный контейнер, чтобы не заимствовать 100vh от Hero */
+.about-robotics .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: block;             /* Сбрасываем flex от Hero-контейнера */
+    height: auto;               /* Позволяем блоку растягиваться по высоте контента */
+}
+
+/* --- Блок Robot Info --- */
+.main-title {
+    font-size: 4.2rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #000;
+    text-align: left;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 60px;             /* Расстояние между текстом и фото */
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.cards-row {
+    display: flex;
+    gap: 20px;
+}
+
+.placeholder-card.small {
+    background-color: #e0e0e0;
+    border-radius: 30px;
+    flex: 1;
+    height: 250px;
+}
+
+.text-block p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* --- Разделитель --- */
+.section-divider {
+    height: 60px;               /* Оставляем только высоту пустого пространства */
+    background-color: transparent; /* Делаем линию невидимой (прозрачной) */
+    margin: 0;                  /* Обнуляем внешние отступы, чтобы не дублировать высоту */
+}
+
+
+
+
+/* --- Блок Specialists --- */
+
+
+/* Выравнивание заголовка и кнопок в ряд */
+.spec-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+/* Настройка кнопок */
+.slider-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.slider-btn {
+    background-color: #f1f1f1; /* Светлый фон для соответствия карточкам */
+    border: none;               /* Убираем рамку для более чистого вида */
+    border-radius: 15px;        /* Тот самый "мягкий квадрат" */
+    width: 50px;
+    height: 50px;
+    font-size: 22px;            /* Укрупненные стрелки */
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.slider-btn:hover {
+    background-color: #000;     /* Инверсия цвета при наведении */
+    color: #fff;
+    transform: translateY(-2px); /* Легкий подъем при наведении */
+}
+
+/* Контейнер слайдера */
+.spec-slider-wrapper {
+    overflow-x: hidden; /* Скрываем лишнее */
+    padding: 10px 0;
+}
+
+.spec-scroll-container {
+    display: flex;
+    gap: 25px;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    scrollbar-width: none; /* Скрываем скроллбар в Firefox */
+}
+
+.spec-scroll-container::-webkit-scrollbar {
+    display: none; /* Скрываем скроллбар в Chrome/Safari */
+}
+
+/* Растянутая карточка */
+.spec-card {
+    flex-shrink: 0; /* Запрещаем сжатие */
+    width: 380px;   /* Увеличенная ширина карточки */
+    background-color: #f1f1f1;
+    border-radius: 30px;
+    padding: 40px 30px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.spec-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.spec-subtitle {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+.spec-grid {
+    display: grid;              /* Используем grid для стабильности */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.spec-card {
+    background-color: #f1f1f1;
+    border-radius: 25px;
+    padding: 25px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s;
+}
+
+.spec-card:hover {
+    transform: translateY(-5px);
+}
+
+.spec-icon-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.spec-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.spec-role {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.spec-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/*________________________________________*/
+.ending-section {
+    position: relative;
+    height: 700px; /* Увеличим высоту для еще большего масштаба */
+    /* Растягиваем на всю ширину экрана */
+    width: 100vw; 
+    margin-left: calc(-50vw + 50%); /* Магическая формула центрирования при 100vw */
+    margin-right: calc(-50vw + 50%);
+    
+    /* Работа с фоном */
+    background-image: url('https://i.ibb.co.com/RJfwwdt/Gemini-Generated-Image-9zxp0x9zxp0x9zxp.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Если нужно, чтобы края были острыми (без рамок), ставим 0 */
+    /* Если нужны скругления только сверху/снизу, используйте border-radius: 40px 40px 0 0; */
+    border-radius: 0; 
+    
+    margin-top: 60px;
+    margin-bottom: 0; /* Прижимаем к низу страницы */
+    
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* ... ваш предыдущий код ... */
+    
+    margin: 0;           /* Убираем все внешние отступы, которые создают "полосы" */
+    padding: 0;          /* Обнуляем внутренние поля */
+    border: none;        /* Гарантируем отсутствие рамок */
+    outline: none;       /* Убираем контуры */
+    
+    /* Если секция должна быть на всю ширину */
+    width: 100%; 
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.ending-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.ending-overlay .container {
+    display: flex;
+    flex-direction: column;
+    /* Смещаем все содержимое к левому краю */
+    align-items: flex-start; 
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* Текст теперь выравнивается по левому флагу */
+    text-align: left; 
+    padding-left: 80px; /* Отступ от левого края для "воздуха" */
+}
+.ending-title {
+    /* Гигантский размер и центрирование */
+    font-size: 8rem; 
+    font-weight: 900;
+    color: #ffffff;
+    white-space: nowrap;
+    letter-spacing: -3px;
+    
+    position: absolute;
+    left: 50%;
+    top: 20%; /* Чуть выше центра, чтобы освободить место снизу */
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Чтобы текст не мешал нажимать на ссылки */
+}
+.contact-box {
+    position: absolute;
+    /* Увеличьте это значение, чтобы поднять блок выше */
+    bottom: 150px; /* Было 60px — теперь блок поднялся в два раза выше */
+    
+    left: 0px;   /* Оставляем привязку к левому краю */
+    text-align: left;
+    color: #ffffff;
+    z-index: 10;
+    
+    /* Добавим плавный переход на случай, если вы захотите менять высоту динамически */
+    transition: bottom 0.3s ease; 
+}
+
+.contact-label {
+    margin-top: 30px;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contact-phone {
+    font-size: 2.1rem;
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+.icon-link {
+    width: 55px;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.icon-link:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.icon-link img {
+    width: 20px;
+    filter: invert(1); /* Делаем иконки белыми */
+}
