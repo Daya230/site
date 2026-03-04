@@ -1,4 +1,115 @@
+@media (max-width: 768px) {
 
+.hero {
+    height: auto;
+    padding: 80px 0;
+}
+
+.container {
+    height: auto;
+    padding-bottom: 40px;
+}
+
+.title {
+    font-size: 2.2rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+}
+
+.hero-cta,
+.cta-group {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-card {
+    position: static;
+    margin-top: 30px;
+    max-width: 100%;
+}
+
+}
+@media (max-width: 768px) {
+
+.grid-container {
+    grid-template-columns: 1fr;
+}
+
+.title-dark {
+    font-size: 2rem;
+}
+
+.subtitle-dark {
+    font-size: 1.2rem;
+}
+
+.grid-card {
+    height: auto;
+}
+
+}
+@media (max-width: 768px) {
+
+.ocean-overlay {
+    height: auto;
+    padding: 40px 20px;
+    border-radius: 25px;
+}
+
+.ocean-title {
+    font-size: 2rem;
+}
+
+.ocean-grid {
+    grid-template-columns: 1fr;
+}
+
+.glass-card {
+    height: auto;
+}
+
+}
+@media (max-width: 768px) {
+
+.grid-layout {
+    grid-template-columns: 1fr;
+}
+
+.main-title {
+    font-size: 2rem;
+}
+
+}
+@media (max-width: 768px) {
+
+.ending-section {
+    height: auto;
+    padding: 80px 20px;
+}
+
+.ending-title {
+    position: static;
+    transform: none;
+    font-size: 2.5rem;
+    white-space: normal;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-box {
+    position: static;
+    bottom: auto;
+}
+
+.ending-overlay .container {
+    padding-left: 0;
+    align-items: center;
+    text-align: center;
+}
+
+}
 
 :root {
     --white: #ffffff;
