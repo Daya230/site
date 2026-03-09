@@ -141,32 +141,45 @@
     }
 }
 @media (max-width: 768px) {
+    /* 1. Уменьшаем основной заголовок секции */
+    .ending-title, 
+    .ending h2 { 
+        font-size: 5rem !important; /* Уменьшенный размер для Safety Speed Sustainability */
+        line-height: 1.2 !important;
+        margin-left: 20px !important;  /* Отступ от левого края */
+        padding-right: 20px !important; /* Чтобы текст не касался правого края при переносе */
+    }
 
-.ending-section {
-    height: auto;
-    padding: 80px 20px;
-}
+    /* 2. Настройка блока контактов и текста */
+    .contact-us-text,
+    .ending-phone,
+    .ending-subtitle {
+        margin-left: 20px !important;  /* Единый отступ для всех текстовых элементов */
+        font-size: 1.1rem !important;
+    }
 
-.ending-title {
-    position: static;
-    transform: none;
-    font-size: 2.5rem;
-    white-space: normal;
-    text-align: center;
-    margin-bottom: 40px;
-}
+    /* 3. Оптимизация иконок социальных сетей / связи */
+    .ending-icons-container,
+    .social-links {
+        display: flex !important;
+        gap: 12px !important;         /* Чуть меньше расстояние между самими иконками */
+        margin-left: 20px !important;  /* Отступ блока иконок от левого края */
+        margin-top: 15px !important;
+    }
 
-.contact-box {
-    position: static;
-    bottom: auto;
-}
+    .ending-icon, 
+    .social-links a {
+        width: 40px !important;        /* Чуть уменьшаем размер самих кружков */
+        height: 40px !important;
+    }
 
-.ending-overlay .container {
-    padding-left: 0;
-    align-items: center;
-    text-align: center;
-}
-
+    /* 4. Общий контейнер секции (если нужно добавить внутренний охват) */
+    .ending-content {
+        padding-left: 0 !important;   /* Сбрасываем старые падинги, если они мешают */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;      /* Выравнивание всего контента по левой линии */
+    }
 }
 
 @media (max-width: 768px) {
