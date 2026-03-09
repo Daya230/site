@@ -224,6 +224,46 @@
         line-height: 1.5 !important;
     }
 }
+@media (max-width: 768px) {
+    /* Основной контейнер шапки */
+    .spec-header-row {
+        display: flex !important;
+        flex-direction: column !important; /* Текст и кнопки на разных уровнях */
+        align-items: flex-start !important; /* Весь блок прижат влево */
+        padding: 0 20px !important;         /* Безопасная зона от краев экрана */
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .spec-title {
+        font-size: 2.2rem !important;
+        text-align: left !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* Контейнер для кнопок: смещаем его вправо */
+    .slider-controls {
+        display: flex !important;
+        width: 100% !important;           /* Растягиваем на всю ширину */
+        justify-content: flex-end !important; /* Смещаем КНОПКИ ВПРАВО */
+        gap: 8px !important;              /* Уменьшенное расстояние между стрелками */
+        margin-top: 10px !important;
+    }
+
+    /* Стили самих кнопок для компактности */
+    .slider-btn {
+        width: 46px !important;
+        height: 46px !important;
+        border-radius: 12px !important;
+        background-color: #f1f1f1 !important;
+    }
+
+    /* Настройка контейнера слайдера, чтобы он не обрезался */
+    .spec-scroll-container {
+        padding: 10px 20px !important;    /* Совпадает с падингом заголовка */
+        gap: 15px !important;
+    }
+}
 
 :root {
     --white: #ffffff;
