@@ -81,15 +81,63 @@
     }
 }
 @media (max-width: 768px) {
+    /* 1. Делаем контейнер картинок видимым и вертикальным */
+    .cards-row {
+        display: flex !important;
+        flex-direction: column !important; /* Картинки одна под другой */
+        gap: 15px !important;
+        width: 100% !important;
+        height: auto !important;
+    }
 
-.grid-layout {
-    grid-template-columns: 1fr;
-}
+    /* 2. Задаем жесткую высоту карточкам, иначе они схлопываются в 0 */
+    .placeholder-card.small {
+        display: block !important;
+        width: 100% !important;
+        height: 200px !important; /* Обязательно укажите высоту в px */
+        background-color: #e0e0e0 !important; /* Цвет для проверки видимости */
+        border-radius: 20px !important;
+    }
 
-.main-title {
-    font-size: 2rem;
-}
+    /* 3. Убеждаемся, что родительский блок их не скрывает */
+    .grid-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+    .grid-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
 
+    /* 2. Группа "Фото 1" (верхний ряд картинок) */
+    .grid-layout .cards-row:nth-of-type(1) {
+        order: 1 !important;
+    }
+
+    /* 3. Текст 1 (под первыми картинками) */
+    .grid-layout .text-block:nth-of-type(1) {
+        order: 2 !important;
+        margin-bottom: 10px;
+    }
+
+    /* 4. Группа "Фото 2" (нижний ряд картинок) */
+    .grid-layout .cards-row:nth-of-type(2) {
+        order: 3 !important;
+    }
+
+    /* 5. Текст 2 (в самом низу) */
+    .grid-layout .text-block:nth-of-type(2) {
+        order: 4 !important;
+    }
+
+    /* 6. Принудительная высота для отображения карточек */
+    .placeholder-card.small {
+        height: 200px !important; 
+        width: 100% !important;
+        display: block !important;
+    }
 }
 @media (max-width: 768px) {
 
@@ -118,6 +166,62 @@
     text-align: center;
 }
 
+}
+
+@media (max-width: 768px) {
+    /* Исправляем общий контейнер секции */
+    .about-robotics .container {
+        padding: 40px 20px !important;
+        height: auto !important;
+        display: block !important; /* Убираем влияние флекса из Hero */
+    }
+
+    /* Делаем заголовок меньше, чтобы он не занимал весь экран */
+    .main-title {
+        font-size: 2.2rem !important;
+        margin-bottom: 30px !important;
+        line-height: 1.2;
+    }
+
+    /* Главная магия: превращаем грид в вертикальный стек */
+    .grid-layout {
+        display: flex !important;
+        flex-direction: column !important; /* Все элементы один под другим */
+        gap: 30px !important;
+    }
+
+    /* Исправляем контейнер для ПАРЫ картинок */
+    .cards-row {
+        display: flex !important;
+        flex-direction: row !important; /* Оставляем 2 картинки в ряд, если они маленькие */
+        gap: 10px !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Если хотите, чтобы на телефоне картинки тоже были одна под другой — 
+       поменяйте выше row на column */
+
+    /* ПРИНУДИТЕЛЬНО возвращаем высоту карточкам */
+    .placeholder-card.small {
+        display: block !important;
+        height: 180px !important; /* Без этой строки они будут 0px и "исчезнут" */
+        background-color: #e0e0e0 !important;
+        border-radius: 20px !important;
+        flex: 1 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Текст под картинками */
+    .text-block {
+        width: 100% !important;
+    }
+
+    .text-block p {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
 }
 
 :root {
