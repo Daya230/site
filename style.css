@@ -81,62 +81,63 @@
     }
 }
 @media (max-width: 768px) {
-    /* 1. Делаем контейнер картинок видимым и вертикальным */
-    .cards-row {
-        display: flex !important;
-        flex-direction: column !important; /* Картинки одна под другой */
-        gap: 15px !important;
-        width: 100% !important;
-        height: auto !important;
-    }
-
-    /* 2. Задаем жесткую высоту карточкам, иначе они схлопываются в 0 */
-    .placeholder-card.small {
-        display: block !important;
-        width: 100% !important;
-        height: 200px !important; /* Обязательно укажите высоту в px */
-        background-color: #e0e0e0 !important; /* Цвет для проверки видимости */
-        border-radius: 20px !important;
-    }
-
-    /* 3. Убеждаемся, что родительский блок их не скрывает */
+    /* 1. Превращаем грид в вертикальный флекс-контейнер */
     .grid-layout {
         display: flex !important;
         flex-direction: column !important;
-        gap: 30px !important;
-    }
-    .grid-layout {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 30px !important;
+        gap: 20px !important;
     }
 
-    /* 2. Группа "Фото 1" (верхний ряд картинок) */
+    /* 2. Назначаем новый порядок элементам (order) */
+    
+    /* Первая группа фото (была 2-й в HTML) */
     .grid-layout .cards-row:nth-of-type(1) {
         order: 1 !important;
     }
 
-    /* 3. Текст 1 (под первыми картинками) */
+    /* Первый блок текста (был 1-м в HTML) */
     .grid-layout .text-block:nth-of-type(1) {
         order: 2 !important;
-        margin-bottom: 10px;
+        margin-bottom: 20px; /* Отступ перед следующей группой */
     }
 
-    /* 4. Группа "Фото 2" (нижний ряд картинок) */
+    /* Вторая группа фото (была 3-й в HTML) */
     .grid-layout .cards-row:nth-of-type(2) {
         order: 3 !important;
     }
 
-    /* 5. Текст 2 (в самом низу) */
+    /* Второй блок текста (был 4-м в HTML) */
     .grid-layout .text-block:nth-of-type(2) {
         order: 4 !important;
     }
 
-    /* 6. Принудительная высота для отображения карточек */
-    .placeholder-card.small {
-        height: 200px !important; 
+    /* 3. Настройка самих карточек с фото, чтобы они не исчезали */
+    .cards-row {
+        display: flex !important;
+        flex-direction: row !important; /* Фото в ряд по 2, как в оригинале */
+        gap: 10px !important;
         width: 100% !important;
+    }
+
+    .placeholder-card.small {
         display: block !important;
+        height: 180px !important; /* Обязательная высота */
+        flex: 1 !important;
+        background-color: #e0e0e0 !important;
+        border-radius: 20px !important;
+    }
+
+    /* Центрируем текст для мобильных */
+    .text-block p {
+        text-align: left;
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
+
+    .main-title {
+        font-size: 2.2rem !important;
+        text-align: center;
+        margin-bottom: 30px !important;
     }
 }
 @media (max-width: 768px) {
