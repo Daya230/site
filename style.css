@@ -70,25 +70,15 @@
     }
 }
 @media (max-width: 768px) {
+    .ocean-grid {
+        grid-template-columns: 1fr !important; /* Форсируем одну колонку */
+        gap: 15px;
+    }
 
-.ocean-overlay {
-    height: auto;
-    padding: 40px 20px;
-    border-radius: 25px;
-}
-
-.ocean-title {
-    font-size: 2rem;
-}
-
-.ocean-grid {
-    grid-template-columns: 1fr;
-}
-
-.glass-card {
-    height: auto;
-}
-
+    .glass-card {
+        height: auto !important; /* Позволяем карточке растягиваться под контент */
+        padding: 20px;
+    }
 }
 @media (max-width: 768px) {
 
@@ -456,25 +446,26 @@ body {
 
 /* Сам баннер с фиксированными размерами из Figma */
 .ocean-overlay {
-    width: 100%;           /* Если хотите строго впритык к краям браузера */
-    max-width: 1440px;     /* Ограничение из Figma */
-    height: 538px;
-    margin: 0;             /* Никаких отступов сверху или снизу */
-
-    border-radius: 50px; /* Сильное скругление углов */
+    width: 100%;
+    max-width: 1440px;
+    /* ЗАМЕНИТЕ height: 538px НА ЭТО: */
+    height: auto; 
+    min-height: 538px; 
+    padding-bottom: 80px; /* Добавим отступ снизу для красоты */
+    
+    margin: 0;
+    border-radius: 50px;
     position: relative;
     overflow: hidden;
     background: url('images/ocean-protectionbackground.png') center/cover no-repeat;
     
-    /* Центрируем содержимое внутри баннера */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 60px 40px 40px;
-    
+    justify-content: flex-start; /* Измените на flex-start, чтобы контент шел сверху вниз */
+    gap: 40px; /* Добавит пространство между заголовком, кнопкой и карточками */
+    padding: 60px 40px;
 }
-
 /* Затемнение фона для лучшей читаемости текста */
 .ocean-overlay::before {
     content: '';
