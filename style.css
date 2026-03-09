@@ -31,24 +31,30 @@
 }
 
 }
+/* Адаптация секции Solutions для мобильных устройств */
 @media (max-width: 768px) {
+    
+    .grid-container {
+        /* Переключаем сетку в одну колонку */
+        grid-template-columns: 1fr; 
+        gap: 20px; /* Немного уменьшаем отступ между карточками */
+    }
 
-.grid-container {
-    grid-template-columns: 1fr;
-}
+    .grid-card {
+        /* Разрешаем карточкам подстраиваться под контент */
+        height: auto; 
+        min-height: 350px; 
+        padding: 30px 20px;
+    }
 
-.title-dark {
-    font-size: 2rem;
-}
+    .title-dark {
+        font-size: 2.2rem; /* Уменьшаем заголовок, чтобы он не занимал весь экран */
+        margin-bottom: 30px;
+    }
 
-.subtitle-dark {
-    font-size: 1.2rem;
-}
-
-.grid-card {
-    height: auto;
-}
-
+    .subtitle-dark {
+        font-size: 1.5rem;
+    }
 }
 @media (max-width: 768px) {
 
