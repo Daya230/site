@@ -136,7 +136,7 @@ body {
     width: 100%;
     
     /* Добавление изображения по ссылке */
-    background-image: url('https://i.ibb.co.com/Fk4r8SGm/Gemini-Generated-Image-6elbty6elbty6elb.png');
+    background-image: url('images/herobackground.png');
     
     /* Настройки отображения */
     background-repeat: no-repeat;
@@ -284,7 +284,7 @@ body {
     height: 110px;
     border-radius: 20px;
     flex-shrink: 0;
-    background: url('https://i.ibb.co.com/cXT957qk/Gemini-Generated-Image-tizjpbtizjpbtizj.png') center/cover;
+    background: url('images/herow.png') center/cover;
 }
 .card-text {
     padding-left: 20px;
@@ -391,7 +391,7 @@ body {
 
 .card-main {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), 
-                url('https://i.ibb.co.com/DgLv4Z0C/Gemini-Generated-Image-p6s1zcp6s1zcp6s1.png') center/cover;
+                url('images/solution.png') center/cover;
     color: #ffffff;
 }
 
@@ -445,7 +445,7 @@ body {
     border-radius: 50px; /* Сильное скругление углов */
     position: relative;
     overflow: hidden;
-    background: url('https://i.ibb.co.com/YFf3dR2n/Gemini-Generated-Image-dfgsjtdfgsjtdfgs.png') center/cover no-repeat;
+    background: url('images/ocean-protectionbackground.png') center/cover no-repeat;
     
     /* Центрируем содержимое внутри баннера */
     display: flex;
@@ -747,7 +747,7 @@ body {
     margin-right: calc(-50vw + 50%);
     
     /* Работа с фоном */
-    background-image: url('https://i.ibb.co.com/RJfwwdt/Gemini-Generated-Image-9zxp0x9zxp0x9zxp.png');
+    background-image: url('images/ending-section.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
