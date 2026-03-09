@@ -1,5 +1,3 @@
-/* Обновленные стили для адаптивности секции Solutions */
-
 @media (max-width: 768px) {
 
 .hero {
@@ -32,62 +30,6 @@
     max-width: 100%;
 }
 
-}
-
-/* Обновленные стили для адаптивности секции Solutions */
-@media (max-width: 768px) {
-    .solutions {
-        padding: 60px 0; /* Уменьшаем отступы секции */
-        height: auto;
-        min-height: auto;
-    }
-
-    .container-solutions {
-        padding: 0 20px; /* Стандартные отступы для мобильных */
-    }
-
-    .title-dark {
-        font-size: 2rem; /* Уменьшаем заголовок, чтобы он не переносился криво */
-        margin-bottom: 30px;
-    }
-
-    .subtitle-dark {
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-    }
-
-    .grid-container {
-        /* Переключаем сетку в одну колонку */
-        grid-template-columns: 1fr; 
-        gap: 20px;
-    }
-
-    .grid-card {
-        /* ГЛАВНОЕ: меняем фиксированную высоту на автоматическую */
-        height: auto; 
-        min-height: 350px; /* Минимальная высота для сохранения вида */
-        padding: 30px 20px;
-        justify-content: flex-start; /* Контент пойдет сверху вниз */
-    }
-
-    .card-main {
-        height: 250px; /* Первая карточка с фото может быть чуть меньше */
-        justify-content: flex-end;
-    }
-
-    .circle-icon {
-        margin-bottom: 20px; /* Отступ иконки сверху */
-    }
-
-    .card-info h4 {
-        font-size: 1.3rem;
-        margin: 15px 0 10px 0;
-    }
-
-    .card-info p {
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
 }
 @media (max-width: 768px) {
 
