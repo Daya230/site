@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата заказа — Tabler Icons</title>
+    <link rel="stylesheet" href="styleDonate.css">
+</head>
+<body>
+    <div class="checkout-container">
+        <aside class="product-summary">
+            <div class="brand">
+                <span class="logo-icon">T</span> Tabler
+            </div>
+            
+            <div class="product-card">
+                <img src="https://via.placeholder.com/64" alt="Tabler Icons" class="product-img">
+                <div class="product-info">
+                    <h3>Tabler Icons</h3>
+                    <p>A beautifully crafted collection of pixel-perfect icons available in EPS, PDF, SVG, PNG, and Webfont formats.</p>
+                </div>
+            </div>
+
+            <div class="price-display">
+                <span class="amount">$9</span>
+            </div>
+
+            <div class="totals">
+                <div class="row"><span>Subtotal</span><span>$9</span></div>
+                <div class="row"><span>Taxes</span><span>$0</span></div>
+                <div class="row total-row"><span>Total</span><span>$9</span></div>
+            </div>
+
+            <button class="discount-btn">Add discount code</button>
+        </aside>
+
+        <main class="payment-form">
+            <form id="checkout-form">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="email@example.com" required>
+                </div>
+
+                <div class="payment-methods">
+                    <div class="method active" data-method="card">
+                        <span class="icon">💳</span> Card
+                    </div>
+                    <div class="method" data-method="cashapp">
+                        <span class="icon">＄</span> Cash App Pay
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Card number</label>
+                    <input type="text" placeholder="1234 1234 1234 1234" maxlength="19">
+                </div>
+
+                <div class="row-flex">
+                    <div class="input-group">
+                        <label>Expiration date</label>
+                        <input type="text" placeholder="MM / YY" maxlength="5">
+                    </div>
+                    <div class="input-group">
+                        <label>Security code</label>
+                        <input type="text" placeholder="CVC" maxlength="4">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Cardholder name</label>
+                    <input type="text" placeholder="Full name on card">
+                </div>
+
+                <div class="input-group">
+                    <label>Billing address</label>
+                    <select>
+                        <option value="KZ">Kazakhstan</option>
+                        <option value="US">United States</option>
+                        <option value="GB">United Kingdom</option>
+                    </select>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="business">
+                    <label for="business">I'm purchasing as a business</label>
+                </div>
+
+                <button type="submit" class="pay-btn">Pay now</button>
+
+                <p class="terms">
+                    By clicking "Pay now," you authorize Polar Software, Inc., our online reseller and merchant of record, to charge your selected payment method...
+                </p>
+                
+                <div class="footer-brand">
+                    Powered by <strong>Polar</strong>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

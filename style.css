@@ -590,6 +590,21 @@ body {
     justify-content: center;
     font-size: 1.5rem;
 }
+.circle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;  /* Настройте под свой дизайн */
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ffffff; /* Цвет фона круга */
+}
+
+.circle-icon svg {
+    width: 30px;  /* Размер самой иконки внутри круга */
+    height: 30px;
+    display: block;
+}
 
 
 /*___________________________________________________________________________*/

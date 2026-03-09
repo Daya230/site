@@ -1,0 +1,168 @@
+:root {
+    --bg-color: #000000;
+    --sidebar-bg: #0a0a0a;
+    --input-bg: #141414;
+    --accent-blue: #2563eb;
+    --text-main: #ffffff;
+    --text-muted: #888888;
+    --border-color: #262626;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.checkout-container {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 700px;
+}
+
+/* Левая часть */
+.product-summary {
+    flex: 1;
+    padding: 60px;
+    background-color: var(--sidebar-bg);
+}
+
+.brand { font-weight: bold; margin-bottom: 40px; display: flex; align-items: center; gap: 8px; }
+.logo-icon { background: var(--accent-blue); padding: 4px 8px; border-radius: 4px; }
+
+.product-card { display: flex; gap: 15px; margin-bottom: 30px; }
+.product-img { border-radius: 8px; border: 1px solid var(--border-color); }
+.product-info h3 { margin: 0; font-size: 1.1rem; }
+.product-info p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.4; }
+
+.price-display { font-size: 2.5rem; font-weight: bold; margin: 40px 0; }
+
+.totals { border-top: 1px solid var(--border-color); padding-top: 20px; }
+.row { display: flex; justify-content: space-between; margin-bottom: 12px; color: var(--text-muted); }
+.total-row { color: var(--text-main); font-weight: bold; font-size: 1.2rem; margin-top: 20px; }
+
+.discount-btn {
+    background: #1a1a1a;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+/* Правая часть */
+.payment-form {
+    flex: 1.2;
+    padding: 60px;
+    background-color: var(--bg-color);
+}
+
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-muted); }
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.method {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.method.active {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+
+.row-flex { display: flex; gap: 15px; }
+
+.pay-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.terms { font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 25px; line-height: 1.5; }
+.footer-brand { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.9rem; }
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .checkout-container {
+        flex-direction: column; /* Стекинг колонок друг под друга */
+    }
+
+    .product-summary {
+        padding: 30px 20px;
+        order: 1; /* Оставляем информацию о заказе сверху */
+    }
+
+    .payment-form {
+        padding: 30px 20px;
+        order: 2;
+    }
+
+    .price-display {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+
+    .product-card {
+        align-items: center;
+    }
+
+    .product-img {
+        width: 48px; /* Уменьшаем изображение для экономии места */
+        height: 48px;
+    }
+
+    .row-flex {
+        flex-direction: column; /* Поля 'Дата' и 'CVC' встают друг под друга */
+        gap: 0;
+    }
+
+    .payment-methods {
+        gap: 8px;
+    }
+
+    .method {
+        padding: 12px 5px;
+        font-size: 0.85rem;
+    }
+
+    /* Увеличиваем размер тач-зон для удобства нажатия пальцем */
+    input, select, .pay-btn {
+        padding: 14px;
+        font-size: 16px; /* Предотвращает авто-зум в iOS Safari */
+    }
+}
