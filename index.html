@@ -242,6 +242,7 @@
     </div>
 </section>
 <script>
+
     function scrollSlider(distance) {
         const slider = document.getElementById('specialistSlider');
         slider.scrollBy({
@@ -249,6 +250,55 @@
             behavior: 'smooth'
         });
     }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = {
+        threshold: 0.15 // Элемент активируется, когда виден на 15%
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                // Если нужно, чтобы анимация сработала только один раз:
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Указываем, какие элементы анимировать
+    const elementsToAnimate = document.querySelectorAll(
+        '.grid-card, .glass-card, .spec-card, .main-title, .text-block'
+    );
+    
+    elementsToAnimate.forEach(el => {
+        el.classList.add('reveal'); // Добавляем класс скрытия программно
+        observer.observe(el);
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = {
+        threshold: 0.2 // Анимация начнется, когда 20% секции появится на экране
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    }, observerOptions);
+
+    // Выбираем заголовок и блок контактов в финальной секции
+    const endingElements = document.querySelectorAll('.ending-title, .contact-box');
+    
+    endingElements.forEach(el => {
+        observer.observe(el);
+    });
+});
 </script>
 </body>
 </html>
