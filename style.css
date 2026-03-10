@@ -1094,3 +1094,36 @@ body {
     will-change: transform, opacity;
     -webkit-backface-visibility: hidden; /* Убирает мерцание на iPhone */
 }
+
+.placeholder-card img {
+    border-radius: 12px; /* Придает современный вид */
+    transition: transform 0.3s ease; /* Добавляет интерактивности при наведении */
+}
+
+.placeholder-card img:hover {
+    transform: scale(1.05);
+}
+
+/* Добавь это в конец style.css или в секцию с .reveal */
+
+.placeholder-card.reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9); /* Чуть уменьшаем при скрытии */
+    transition: opacity 1s ease-out, transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform, opacity;
+}
+
+.placeholder-card.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Эффект для самого изображения внутри при наведении (опционально) */
+.placeholder-card img {
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+
+.placeholder-card:hover img {
+    transform: scale(1.03);
+}
