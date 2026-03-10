@@ -299,6 +299,10 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(el);
     });
 });
+
+const observerOptions = {
+    threshold: 0.05 // Сработает, как только появится хотя бы край (5%)
+};
 </script>
 </body>
 </html>

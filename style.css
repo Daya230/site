@@ -1069,6 +1069,7 @@ body {
     transform: translate(-50%, -40%) scale(0.95);
     transition: opacity 1.2s ease-out, transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform, opacity;
+    
 }
 
 /* Состояние при активации (видимо) */
@@ -1087,4 +1088,9 @@ body {
 .contact-box.active {
     opacity: 1;
     transform: translateX(0);
+}
+
+.ending-title {
+    will-change: transform, opacity;
+    -webkit-backface-visibility: hidden; /* Убирает мерцание на iPhone */
 }
